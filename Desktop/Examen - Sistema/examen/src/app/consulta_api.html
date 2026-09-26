@@ -1,0 +1,26 @@
+<div style="font-family: Arial, sans-serif; padding: 20px;">
+  <h2>Catálogo de Productos</h2>
+
+  <div *ngIf="cargando" style="color: blue;">Cargando datos...</div>
+  <div *ngIf="error" style="color: red;">{{ error }}</div>
+
+ <table *ngIf="!cargando && !error" border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+    <thead style="background-color: #f2f2f2;">
+      <tr>
+        <th style="padding: 8px;">UserId</th>
+        <th style="padding: 8px;">Id</th>
+        <th style="padding: 8px;">Title</th>
+        <th style="padding: 8px;">Body</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr *ngFor="let post of posts">
+        <td style="padding: 8px;">{{ post.UserId }}</td>
+        <td style="padding: 8px;">{{ post.Id }}</td>
+        <td style="padding: 8px;">{{ post.Title }}</td>
+        <td style="padding: 8px;">{{ post.Body }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
